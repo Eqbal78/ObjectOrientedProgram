@@ -60,5 +60,10 @@ namespace ObjectOrientedProgram.JsonInventory
                 Console.WriteLine("Total Value of {0} =  {1}: ", form.Name, (form.Weight * form.Price));
             }
         }
+
+        internal void CalculateTotalStockValue()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
