@@ -5,7 +5,7 @@ using ObjectOrientedProgram.StockDataProcessing;
 using System;
 using Newtonsoft.Json;
 using System.IO;
-
+using ObjectOrientedProgram.DeackOfCard;
 
 namespace ObjectOrientedProgram.StockDataProcessing
 {
@@ -18,7 +18,7 @@ namespace ObjectOrientedProgram.StockDataProcessing
             while (true)
             {
                 Console.WriteLine("\nChoose An Option to Perform an Action :");
-                Console.WriteLine("Press 1 : Json Inventory \nPress 2 : Json Inventory Management\nPress 3 : Stock Management\nPress 4 : Stock Data Processing \nPress 5 : Exit");
+                Console.WriteLine("Press 1 : Json Inventory \nPress 2 : Json Inventory Management\nPress 3 : Stock Management\nPress 4 : Stock Data Processing\nPress 5 : Deck of Card \nPress 6 : Exit");
                 Console.WriteLine("----------------------------------------");
                 int userOption = int.Parse(Console.ReadLine());
                 switch (userOption)
@@ -50,6 +50,17 @@ namespace ObjectOrientedProgram.StockDataProcessing
                         break;
 
                     case 5:
+                        Console.WriteLine("Display Deck of Card\n");
+                        //creating object for deck of card class
+                        Deck deckOfCards = new Deck();
+                        //initialize the player array with 4 players and each player with 9 cards
+                        Card[,] players = new Card[4, 9];
+                        //call the alotCards method
+                        players = deckOfCards.alotCards(players);
+                        deckOfCards.display(players);
+                        break;
+
+                    case 6:
                         Environment.Exit(0);
                         break;
 
